@@ -1,4 +1,4 @@
-# <img src="https://github.com/divy-arun-mav/Kalpayit/blob/master/app/favicon.ico" width="35" height="35"> कल्पयित (Kalpayit)
+# <div style="display: flex; justify-content: center; align-items: center;"><img src="https://github.com/divy-arun-mav/Kalpayit/blob/master/app/favicon.ico" width="35" height="33"> कल्पयित (Kalpayit) </div>
 
 **Kalpayit** is a powerful application for designing, creating mockups, and bringing your ideas to life. Whether you're a designer, developer, teacher, professional, or student, Kalpayit provides an intuitive and collaborative environment to enhance your creativity and problem-solving abilities.
 
