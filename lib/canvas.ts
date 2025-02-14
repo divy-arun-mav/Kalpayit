@@ -343,6 +343,12 @@ export const renderCanvas = ({
   // clear canvas
   fabricRef.current?.clear();
 
+  // Ensure canvasObjects is defined before iterating
+  if (!canvasObjects || typeof canvasObjects !== "object") {
+    console.warn("Canvas objects are not initialized or invalid.");
+    return;
+  }
+
   // render all objects on canvas
   Array.from(canvasObjects, ([objectId, objectData]) => {
     /**
