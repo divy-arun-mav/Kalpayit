@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# कल्पयित (Kalpayit)
 
-## Getting Started
+**Kalpayit** is a powerful application for designing, creating mockups, and bringing your ideas to life. Whether you're a designer, developer, teacher, professional, or student, Kalpayit provides an intuitive and collaborative environment to enhance your creativity and problem-solving abilities.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- 🎨 **Design Applications & Mockups** – Create stunning UI/UX designs and mockup images effortlessly.
+- 🖍️ **Whiteboard Functionality** – Ideal for teachers and students to visualize concepts and solve problems.
+- ⚡ **Real-time Collaboration** – Work seamlessly with your team, make edits, and see changes live.
+- 💬 **Messaging & Reactions** – Communicate with team members and provide instant feedback.
+- 📂 **Easy File Management** – Organize your projects efficiently with a clean and simple interface.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Why Choose Kalpayit?
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Kalpayit is more than just a design tool; it’s an innovative workspace that fosters creativity and teamwork. With real-time editing and interactive features, it serves as an excellent alternative to Figma while also catering to educators and professionals looking for a dynamic whiteboard solution.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔧 Getting Started
 
-## Learn More
+1. **Download & Install** – Get Kalpayit on your device and start designing instantly.
+2. **Create & Collaborate** – Invite team members to your project and work together in real time.
+3. **Enhance Your Workflow** – Use messaging, reactions, and whiteboard features to improve collaboration.
 
-To learn more about Next.js, take a look at the following resources:
+## 📌 Use Cases
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **UI/UX Designers** – Create and share prototypes effortlessly.
+- **Educators & Students** – Use the whiteboard to explain concepts interactively.
+- **Project Teams** – Plan and design projects with live feedback and collaboration.
+- **Freelancers & Professionals** – Deliver high-quality designs with an intuitive interface.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+Kalpayit – **Unleash Your Creativity with Seamless Collaboration!** 🎨🚀
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Made with ❤️ by Divy Mav**
