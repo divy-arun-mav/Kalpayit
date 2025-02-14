@@ -10,8 +10,8 @@ const workSans = Work_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Figma",
-  description: "This is a figma clone created using fabric js library",
+  title: "कल्पयित",
+  description: "कल्पयित is an app for bringing your imaginations to live.",
 };
 
 export default function RootLayout({
