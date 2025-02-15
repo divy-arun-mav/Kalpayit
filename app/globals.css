@@ -2,12 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "@liveblocks/react-comments/styles.css";
+@import "@liveblocks/react-ui/styles.css";
 
 * {
   font-family:
     work sans,
     sans-serif;
+}
+
+body{
+  overflow: hidden;
 }
 
 @layer utilities {
@@ -20,10 +24,10 @@
   }
 
   .right-menu-content {
-    @apply flex w-80 flex-col gap-y-1 border-none bg-primary-black py-4 text-white !important;
+    @apply flex w-80 flex-col gap-y-1 border-none bg-black py-4 text-white !important;
   }
 
   .right-menu-item {
-    @apply flex justify-between px-3 py-2 hover:bg-primary-grey-200 !important;
+    @apply flex justify-between px-3 py-2 hover:bg-gray-700 !important;
   }
 }

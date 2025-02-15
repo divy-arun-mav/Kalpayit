@@ -7,7 +7,7 @@ const Export = () => (
     <h3 className='text-[10px] uppercase'>Export</h3>
     <Button
       variant='outline'
-      className='w-full border border-gray-900 hover:bg-primary-green hover:text-primary-black'
+      className='w-full border border-gray-600 hover:bg-yellow-500 hover:text-black rounded-xl'
       onClick={exportToPdf}
     >
       Export to PDF

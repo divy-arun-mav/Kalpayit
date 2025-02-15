@@ -3,10 +3,13 @@ import Color from './settings/Color'
 import Dimensions from './settings/Dimensions'
 import Export from './settings/Export'
 import Text from './settings/Text'
-import React from 'react'
+import React, { useRef } from 'react'
 import { modifyShape } from '@/lib/shapes'
 
 const RightSideBar = ({ elementAttributes, setElementAttributes, fabricRef, isEditingRef, activeObjectRef, syncShapeInStorage }: RightSidebarProps) => {
+
+  const colorInputRef = useRef(null);
+  const strokeInputRef = useRef(null);
 
   const handleInputChange = (property: string, value: string) => {
     if (!isEditingRef.current) {
@@ -35,9 +38,26 @@ const RightSideBar = ({ elementAttributes, setElementAttributes, fabricRef, isEd
         isEditingRef={isEditingRef}
         handleInputChange={handleInputChange}
       />
-      <Text />
-      <Color />
-      <Color />
+      <Text
+        fontFamily={elementAttributes.fontFamily}
+        fontSize={elementAttributes.fontSize}
+        fontWeight={elementAttributes.fontWeight}
+        handleInputChange={handleInputChange}
+      />
+      <Color
+        inputRef={colorInputRef}
+        attribute={elementAttributes.fill}
+        attributeType='fill'
+        placeholder='color'
+        handleInputChange={handleInputChange}
+      />
+      <Color
+        inputRef={strokeInputRef}
+        attribute={elementAttributes.stroke}
+        attributeType='stroke'
+        placeholder='stroke'
+        handleInputChange={handleInputChange}
+      />
       <Export/>
     </section>
   )

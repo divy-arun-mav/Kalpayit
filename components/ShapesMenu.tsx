@@ -30,14 +30,14 @@ const ShapesMenu = ({
                     </Button>
                 </DropdownMenuTrigger>
 
-                <DropdownMenuContent className="mt-5 flex flex-col gap-y-1 border-none bg-primary-black py-4 text-white">
+                <DropdownMenuContent className="mt-5 flex flex-col gap-y-1 border-none bg-black py-4 text-white">
                     {item.value.map((elem) => (
                         <Button
                             key={elem?.name}
                             onClick={() => {
                                 handleActiveElement(elem);
                             }}
-                            className={`flex h-fit justify-between gap-10 rounded-none px-5 py-3 focus:border-none ${activeElement?.value === elem?.value ? "bg-primary-green" : "hover:bg-gray-800"
+                            className={`flex h-fit justify-between gap-10 rounded-none px-5 py-3 focus:border-none ${activeElement?.value === elem?.value ? "bg-yellow-500" : "hover:bg-gray-800"
                                 }`}
                         >
                             <div className="group flex items-center gap-2">
