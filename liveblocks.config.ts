@@ -17,7 +17,7 @@ declare global {
     Storage: {
       // Example, a conflict-free list
       // animals: LiveList<string>;
-      canvasObjects: LiveMap<string, any>;
+      canvasObjects: LiveMap<string, unknown>;
     };
 
     // Custom user info set when authenticating with a secret key

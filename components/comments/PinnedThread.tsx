@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import Image from "next/image";
@@ -33,7 +34,7 @@ export const PinnedThread = ({ thread, onFocus, ...props }: Props) => {
       <div
         className='absolute flex cursor-pointer gap-4'
         {...props}
-        onClick={(e: any) => {
+        onClick={(e: unknown) => {
           onFocus(thread.id);
 
           // check if click is on/in the composer

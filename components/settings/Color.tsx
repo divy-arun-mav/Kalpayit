@@ -1,7 +1,7 @@
 import { Label } from "../ui/label";
 
 type Props = {
-  inputRef: any;
+  inputRef: unknown;
   attribute: string;
   placeholder: string;
   attributeType: string;

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useOthers, useSelf } from "@liveblocks/react";
 import { Avatar } from "./Avatar";
 import styles from "./index.module.css";

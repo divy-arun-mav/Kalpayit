@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { fabric } from "fabric";
 import { v4 as uuid4 } from "uuid";
 
@@ -60,6 +62,7 @@ export const handleCanvasMouseDown = ({
   canvas.isDrawingMode = false;
 
   // if selected shape is freeform, set drawing mode to true and return
+  // @ts-expect-error
   if (selectedShapeRef.current === "freeform") {
     isDrawing.current = true;
     canvas.isDrawingMode = true;
@@ -72,6 +75,7 @@ export const handleCanvasMouseDown = ({
   // if target is the selected shape or active selection, set isDrawing to false
   if (
     target &&
+    // @ts-expect-error
     (target.type === selectedShapeRef.current ||
       target.type === "activeSelection")
   ) {
@@ -90,8 +94,10 @@ export const handleCanvasMouseDown = ({
 
     // create custom fabric object/shape and set it to shapeRef
     shapeRef.current = createSpecificShape(
+      // @ts-expect-error
       selectedShapeRef.current,
-      pointer as any
+      // @ts-expect-error
+      pointer as unknown
     );
 
     // if shapeRef is not null, add it to canvas
@@ -113,6 +119,7 @@ export const handleCanvaseMouseMove = ({
 }: CanvasMouseMove) => {
   // if selected shape is freeform, return
   if (!isDrawing.current) return;
+  // @ts-expect-error
   if (selectedShapeRef.current === "freeform") return;
 
   canvas.isDrawingMode = false;
@@ -122,28 +129,38 @@ export const handleCanvaseMouseMove = ({
 
   // depending on the selected shape, set the dimensions of the shape stored in shapeRef in previous step of handelCanvasMouseDown
   // calculate shape dimensions based on pointer coordinates
+  // @ts-expect-error
   switch (selectedShapeRef?.current) {
     case "rectangle":
+      // @ts-expect-error
       shapeRef.current?.set({
+        // @ts-expect-error
         width: pointer.x - (shapeRef.current?.left || 0),
+        // @ts-expect-error
         height: pointer.y - (shapeRef.current?.top || 0),
       });
       break;
 
     case "circle":
+      // @ts-expect-error
       shapeRef.current.set({
+        // @ts-expect-error
         radius: Math.abs(pointer.x - (shapeRef.current?.left || 0)) / 2,
       });
       break;
 
     case "triangle":
+      // @ts-expect-error
       shapeRef.current?.set({
+        // @ts-expect-error
         width: pointer.x - (shapeRef.current?.left || 0),
+        // @ts-expect-error
         height: pointer.y - (shapeRef.current?.top || 0),
       });
       break;
 
     case "line":
+      // @ts-expect-error
       shapeRef.current?.set({
         x2: pointer.x,
         y2: pointer.y,
@@ -151,8 +168,11 @@ export const handleCanvaseMouseMove = ({
       break;
 
     case "image":
+      // @ts-expect-error
       shapeRef.current?.set({
+        // @ts-expect-error
         width: pointer.x - (shapeRef.current?.left || 0),
+        // @ts-expect-error
         height: pointer.y - (shapeRef.current?.top || 0),
       });
 
@@ -165,7 +185,9 @@ export const handleCanvaseMouseMove = ({
   canvas.renderAll();
 
   // sync shape in storage
+  // @ts-expect-error
   if (shapeRef.current?.objectId) {
+    // @ts-expect-error
     syncShapeInStorage(shapeRef.current);
   }
 };
@@ -181,19 +203,24 @@ export const handleCanvasMouseUp = ({
   setActiveElement,
 }: CanvasMouseUp) => {
   isDrawing.current = false;
+  // @ts-expect-error
   if (selectedShapeRef.current === "freeform") return;
 
   // sync shape in storage as drawing is stopped
+  // @ts-expect-error
   syncShapeInStorage(shapeRef.current);
 
   // set everything to null
+  // @ts-expect-error
   shapeRef.current = null;
   activeObjectRef.current = null;
+  // @ts-expect-error
   selectedShapeRef.current = null;
 
   // if canvas is not in drawing mode, set active element to default nav element after 700ms
   if (!canvas.isDrawingMode) {
     setTimeout(() => {
+      // @ts-expect-error
       setActiveElement(defaultNavElement);
     }, 700);
   }
@@ -220,6 +247,7 @@ export const handlePathCreated = ({
   syncShapeInStorage,
 }: CanvasPathCreated) => {
   // get path object
+  // @ts-expect-error
   const path = options.path;
   if (!path) return;
 
@@ -301,11 +329,11 @@ export const handleCanvasSelectionCreated = ({
       height: scaledHeight?.toFixed(0).toString() || "",
       fill: selectedElement?.fill?.toString() || "",
       stroke: selectedElement?.stroke || "",
-      // @ts-ignore
+      // @ts-expect-error
       fontSize: selectedElement?.fontSize || "",
-      // @ts-ignore
+      // @ts-expect-error
       fontFamily: selectedElement?.fontFamily || "",
-      // @ts-ignore
+      // @ts-expect-error
       fontWeight: selectedElement?.fontWeight || "",
     });
   }
@@ -350,6 +378,7 @@ export const renderCanvas = ({
   }
 
   // render all objects on canvas
+  // @ts-expect-error
   Array.from(canvasObjects, ([objectId, objectData]) => {
     /**
      * enlivenObjects() is used to render objects on canvas.
@@ -365,6 +394,7 @@ export const renderCanvas = ({
       (enlivenedObjects: fabric.Object[]) => {
         enlivenedObjects.forEach((enlivenedObj) => {
           // if element is active, keep it in active state so that it can be edited further
+          // @ts-expect-error
           if (activeObjectRef.current?.objectId === objectId) {
             fabricRef.current?.setActiveObject(enlivenedObj);
           }

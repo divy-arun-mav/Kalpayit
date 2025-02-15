@@ -24,7 +24,7 @@ const Navbar = ({ activeElement, imageInputRef, handleImageUpload, handleActiveE
             </div>
 
             <ul className="flex flex-row">
-                {navElements.map((item: ActiveElement | any) => (
+                {navElements.map((item: ActiveElement | unknown) => (
                     <li
                         key={item.name}
                         onClick={() => {

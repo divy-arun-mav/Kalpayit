@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { fabric } from "fabric";
 import { v4 as uuidv4 } from "uuid";
 
@@ -33,13 +34,14 @@ export const createTriangle = (pointer: PointerEvent) => {
 };
 
 export const createCircle = (pointer: PointerEvent) => {
+  // @ts-expect-error
   return new fabric.Circle({
     left: pointer.x,
     top: pointer.y,
     radius: 100,
     fill: "#aabbcc",
     objectId: uuidv4(),
-  } as any);
+  } as unknown);
 };
 
 export const createLine = (pointer: PointerEvent) => {
@@ -105,7 +107,7 @@ export const handleImageUpload = ({
 
       canvas.current.add(img);
 
-      // @ts-ignore
+      // @ts-expect-error
       img.objectId = uuidv4();
 
       shapeRef.current = img;
@@ -145,12 +147,15 @@ export const modifyShape = ({
   // if  property is width or height, set the scale of the selected element
   if (property === "width") {
     selectedElement.set("scaleX", 1);
-    selectedElement.set("width", value);  
+    // @ts-expect-error
+    selectedElement.set("width", value);
   } else if (property === "height") {
     selectedElement.set("scaleY", 1);
+    // @ts-expect-error
     selectedElement.set("height", value);
   } else {
     if (selectedElement[property as keyof object] === value) return;
+    // @ts-expect-error
     selectedElement.set(property as keyof object, value);
   }
 

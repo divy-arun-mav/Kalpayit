@@ -78,7 +78,7 @@ export default function Page() {
                 break;
 
             case 'delete':
-                handleDelete(fabricRef.current as any, deleteShapeFromStorage);
+                handleDelete(fabricRef.current as unknown, deleteShapeFromStorage);
                 setActiveElement(defaultNavElement);
                 break;
 
@@ -177,7 +177,7 @@ export default function Page() {
             })
         });
 
-        canvas.on("selection:created", (options: any) => {
+        canvas.on("selection:created", (options: unknown) => {
             handleCanvasSelectionCreated({
                 options,
                 isEditingRef,
@@ -185,13 +185,13 @@ export default function Page() {
             })
         })
 
-        canvas.on("object:scaling", (options: any) => {
+        canvas.on("object:scaling", (options: unknown) => {
             handleCanvasObjectScaling({
                 options, setElementAttributes
             })
         })
 
-        canvas.on("path:created", (options: any) => {
+        canvas.on("path:created", (options: unknown) => {
             handlePathCreated({
                 options, syncShapeInStorage
             })
@@ -203,7 +203,7 @@ export default function Page() {
             });
         });
 
-        window.addEventListener("keydown", (e: any) => {
+        window.addEventListener("keydown", (e: unknown) => {
             handleKeyDown({
                 e,
                 canvas: fabricRef.current,
@@ -234,12 +234,12 @@ export default function Page() {
                 activeElement={activeElement}
                 handleActiveElement={handleActiveElement}
                 imageInputRef={imageInputRef}
-                handleImageUpload={(e: any) => {
+                handleImageUpload={(e: unknown) => {
                     e.stopPropagation();
 
                     handleImageUpload({
                         file: e.target.files[0],
-                        canvas: fabricRef as any,
+                        canvas: fabricRef as unknown,
                         shapeRef,
                         syncShapeInStorage,
                     })

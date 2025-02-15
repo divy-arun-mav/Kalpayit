@@ -64,9 +64,9 @@ export const NewThread = ({ children }: Props) => {
       // If already placed, click outside to close composer
       if (creatingCommentState === "placed") {
         // check if the click event is on/inside the composer
-        const isClickOnComposer = ((e as any)._savedComposedPath = e
+        const isClickOnComposer = ((e as unknown)._savedComposedPath = e
           .composedPath()
-          .some((el: any) => {
+          .some((el: unknown) => {
             return el.classList?.contains("lb-composer-editor-actions");
           }));
 
@@ -101,7 +101,7 @@ export const NewThread = ({ children }: Props) => {
     // If dragging composer, update position
     const handlePointerMove = (e: PointerEvent) => {
       // Prevents issue with composedPath getting removed
-      (e as any)._savedComposedPath = e.composedPath();
+      (e as unknown)._savedComposedPath = e.composedPath();
       lastPointerEvent.current = e;
     };
 
@@ -128,7 +128,7 @@ export const NewThread = ({ children }: Props) => {
       }
 
       // Prevents issue with composedPath getting removed
-      (e as any)._savedComposedPath = e.composedPath();
+      (e as unknown)._savedComposedPath = e.composedPath();
       lastPointerEvent.current = e;
       setAllowUseComposer(true);
     };

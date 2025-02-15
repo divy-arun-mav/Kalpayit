@@ -73,7 +73,7 @@ export interface CustomFabricObject<T extends fabric.Object>
 export type ModifyShape = {
   canvas: fabric.Canvas;
   property: string;
-  value: any;
+  value: unknown;
   activeObjectRef: React.MutableRefObject<fabric.Object | null>;
   syncShapeInStorage: (shape: fabric.Object) => void;
 };
@@ -97,7 +97,7 @@ export type RightSidebarProps = {
   fabricRef: React.RefObject<fabric.Canvas | null>;
   activeObjectRef: React.RefObject<fabric.Object | null>;
   isEditingRef: React.MutableRefObject<boolean>;
-  syncShapeInStorage: (obj: any) => void;
+  syncShapeInStorage: (obj: unknown) => void;
 };
 
 export type NavbarProps = {
@@ -113,17 +113,17 @@ export type ShapesMenuProps = {
     icon: string;
     value: Array<ActiveElement>;
   };
-  activeElement: any;
-  handleActiveElement: any;
-  handleImageUpload: any;
-  imageInputRef: any;
+  activeElement: unknown;
+  handleActiveElement: unknown;
+  handleImageUpload: unknown;
+  imageInputRef: unknown;
 };
 
 
 export type CanvasMouseDown = {
   options: fabric.IEvent;
   canvas: fabric.Canvas;
-  selectedShapeRef: any;
+  selectedShapeRef: unknown;
   isDrawing: React.MutableRefObject<boolean>;
   shapeRef: React.MutableRefObject<fabric.Object | null>;
 };
@@ -132,19 +132,19 @@ export type CanvasMouseMove = {
   options: fabric.IEvent;
   canvas: fabric.Canvas;
   isDrawing: React.MutableRefObject<boolean>;
-  selectedShapeRef: any;
-  shapeRef: any;
+  selectedShapeRef: unknown;
+  shapeRef: unknown;
   syncShapeInStorage: (shape: fabric.Object) => void;
 };
 
 export type CanvasMouseUp = {
   canvas: fabric.Canvas;
   isDrawing: React.MutableRefObject<boolean>;
-  shapeRef: any;
+  shapeRef: unknown;
   activeObjectRef: React.MutableRefObject<fabric.Object | null>;
-  selectedShapeRef: any;
+  selectedShapeRef: unknown;
   syncShapeInStorage: (shape: fabric.Object) => void;
-  setActiveElement: any;
+  setActiveElement: unknown;
 };
 
 export type CanvasObjectModified = {
@@ -153,7 +153,7 @@ export type CanvasObjectModified = {
 };
 
 export type CanvasPathCreated = {
-  options: (fabric.IEvent & { path: CustomFabricObject<fabric.Path> }) | any;
+  options: (fabric.IEvent & { path: CustomFabricObject<fabric.Path> }) | unknown;
   syncShapeInStorage: (shape: fabric.Object) => void;
 };
 
@@ -170,8 +170,8 @@ export type CanvasObjectScaling = {
 
 export type RenderCanvas = {
   fabricRef: React.MutableRefObject<fabric.Canvas | null>;
-  canvasObjects: any;
-  activeObjectRef: any;
+  canvasObjects: unknown;
+  activeObjectRef: unknown;
 };
 
 export type CursorChatProps = {

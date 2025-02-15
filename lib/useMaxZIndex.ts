@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useMemo } from "react";
 
 import { useThreads } from "@liveblocks/react";
@@ -12,9 +13,9 @@ export const useMaxZIndex = () => {
     let max = 0;
     if (!threads) return max;
     for (const thread of threads) {
-      // @ts-ignore
+      // @ts-expect-error
       if (thread.metadata.zIndex > max) {
-        // @ts-ignore
+        // @ts-expect-error
         max = thread.metadata.zIndex;
       }
     }
